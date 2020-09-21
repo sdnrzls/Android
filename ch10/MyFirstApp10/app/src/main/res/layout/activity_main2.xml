@@ -8,16 +8,31 @@
     android:background="#00ff00"
     android:orientation="vertical"
     tools:context=".MainActivity2">
-
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <RadioButton
+        android:id="@+id/rdsecond2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="버튼222222"/>
+        android:text="second 액티비티"/>
+    <RadioButton
+        android:id="@+id/rdthird2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Third 액티비티"/>
+    </RadioGroup>
+
     <EditText
         android:id="@+id/edt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="여기에..."/>
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="돌아가기"/>
+
 
 </LinearLayout>
