@@ -20,10 +20,10 @@ public class MainActivity3 extends AppCompatActivity {
             Button btn3 = (Button)findViewById(R.id.btn3);
             EditText edt3 = (EditText)findViewById(R.id.edt3);
 
-            Intent in2 = getIntent();
+            Intent in2 = getIntent();// MainActivity 에서 Intent한 값을 받음
 
             int n = 0;
-            n = in2.getIntExtra("Data1",0);
+            n = in2.getIntExtra("Data1",0);// Intent로 받은 값을 n에 대입
             edt3.setText(""+n);
 
             btn3.setOnClickListener(new View.OnClickListener() {

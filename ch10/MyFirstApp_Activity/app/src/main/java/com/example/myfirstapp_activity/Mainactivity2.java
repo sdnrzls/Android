@@ -16,7 +16,8 @@ public class Mainactivity2 extends AppCompatActivity {
         setContentView(R.layout.second);
         setTitle("Secont 액티비티");
 
-        Intent intent = getIntent();
+        Intent intent = getIntent();// Intent 변수 생성 Main에서 받아온 값 대입
+        //intent 안의 값들을 변수지정하여 대입
         final int num1 = intent.getIntExtra("Num1",0);
         final int num2 = intent.getIntExtra("Num2",0);
         final Integer rg = intent.getIntExtra("rg",0);
@@ -42,9 +43,11 @@ public class Mainactivity2 extends AppCompatActivity {
                         break;
                 }
 
-                //intent 선언
+                //Intent 선언
                 Intent outintent = new Intent(getApplicationContext(),MainActivity.class);
+                //Intent(변수명 outintent)에 값을대입
                 outintent.putExtra("result",result);
+                //메인 액티비티로 돌려준다
                 setResult(RESULT_OK, outintent);
                 finish();
             }

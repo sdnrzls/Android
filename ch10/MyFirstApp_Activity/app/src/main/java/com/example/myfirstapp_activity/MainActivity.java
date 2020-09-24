@@ -21,20 +21,21 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = (Button)findViewById(R.id.btn);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() { //버튼 이벤트 (버튼클릭시)
             @Override
             public void onClick(View v) {
-                EditText edtNum1 = (EditText) findViewById(R.id.edtNum1);
+                EditText edtNum1 = (EditText) findViewById(R.id.edtNum1);//View에있는 EditTExt id 를 변수에 대입
                 EditText edtNum2 = (EditText) findViewById(R.id.edtNum2);
 
-                RadioGroup rg = (RadioGroup)findViewById(R.id.rg);
+                RadioGroup rg = (RadioGroup)findViewById(R.id.rg);//View에있는 RadioGroup id 를 변수에 대입
 
+                //Intent 객체 생성 (현위치 , 보낼위치)
                 Intent intent = new Intent(getApplicationContext(), Mainactivity2.class );
-
+                //Intent 객체에 값 넣기
                 intent.putExtra("Num1", Integer.parseInt(edtNum1.getText().toString()));
                 intent.putExtra("Num2", Integer.parseInt(edtNum2.getText().toString()));
                 intent.putExtra("rg",rg.getCheckedRadioButtonId());
-
+                //연결 시작
                 startActivityForResult(intent,0);
             }
         });

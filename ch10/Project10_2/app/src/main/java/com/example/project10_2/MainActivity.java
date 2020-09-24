@@ -31,16 +31,17 @@ public class MainActivity extends AppCompatActivity {
         //그림의 이름을 저장한 배열
         final String imgName[] = {"독서하는 소녀", "꽃장식 모자 소녀", "부태를 든 소녀", "이레느깡 단 베르양",
                                    "잠자는 소녀","테라스의 두 자매","피아노 레슨","피아노 앞의 소녀들", "해변에서"};
-
+        //이미지 뷰의 갯수만큼 반복
         for(int i=0; i<imageId.length; i++){
             final int index; //
             index = i;
+            //1개의 이미지뷰에 대해 클릭 리스너를 작성한것과 동일(배열사용)
             image[index] = (ImageView)findViewById(imageId[index]);
             image[index].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    voteCount[index]++;
-                    Toast.makeText(getApplicationContext(),
+                    voteCount[index]++; //이미지 뷰 클릭할때마다 해당 이미지 순번의 투표수(voteCount) 배열값 하나씩 증가
+                    Toast.makeText(getApplicationContext(),// 이미지뷰 클랙할때마다 해당 이미지의 이름 과 투표수를 메세지로 표출
                             imgName[index] + ": 총"+ voteCount[index]+" 표",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 //Intent(현위치,보낼위치)
                 Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
                 //보낼 내용 첨부
-                intent.putExtra("VoteCount",voteCount);
+                intent.putExtra("VoteCount",voteCount);//정수형 voteCount 배열을 VoteCount 이름으로 넘김
                 intent.putExtra("ImageName",imgName);
                 //보냄
                 startActivity(intent);

@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+//액티비티(Activity) : 화면을 구성하는 가장 기본적인 컴포넌트
 
+//AppCompatActivity 클래스를 상속
 public class MainActivity extends AppCompatActivity {
     RadioButton rdsecond, rdthird;
     @Override
@@ -31,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
                         Intent in = new Intent(MainActivity.this,
                                 MainActivity2.class); //연결(통로) 객체(현위치,이동할 위치)
 
-                        String str1 = edt1.getText().toString();
+                        String str1 = edt1.getText().toString(); //Edit Text(edt1)의 값을 변수지정
 
-                        int n = Integer.parseInt(str1);
+                        int n = Integer.parseInt(str1); //Integer로 숫자로 변환
 
 //                in.putExtra("Data1", str1);
-                        in.putExtra("Data1", n);//값을 연결객체에 삽입
+                        in.putExtra("Data1", n);//값을 연결객체에 삽입 (변수명 , 값)
 
-                        startActivity(in); //이동
+                        startActivity(in); //연결 시작(이동)
                     }else if(rdthird.isChecked()) {
                         Intent in = new Intent(MainActivity.this,
                                 MainActivity3.class); //연결(통로) 객체(현위치,이동할 위치)
