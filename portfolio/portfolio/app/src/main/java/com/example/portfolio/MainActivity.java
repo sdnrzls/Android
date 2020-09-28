@@ -23,14 +23,15 @@ public class MainActivity extends AppCompatActivity {
         final String imgName[] = {"테넷","뮬란","검객","BTS"};
 
         for(int i=0; i<imageId.length; i++){
-            int index =i;
+            final int index =i;
+
             image[index] = (ImageView)findViewById(imageId[index]);
             image[index].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(),MovieActivity.class);
-                    intent.putExtra("ImageID",imageId);
-                    intent.putExtra("ImageName",imgName);
+                    intent.putExtra("ImageID",imageId[index]);
+                    intent.putExtra("ImageName",imgName[index]);
                     startActivity(intent);
                 }
             });
