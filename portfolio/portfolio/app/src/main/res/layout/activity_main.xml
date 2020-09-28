@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableRow>
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/ivTenet"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:src="@drawable/tenet" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/ivMul"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:src="@drawable/mul"/>
+    </TableRow>
+    <TableRow>
+        <ImageView
+            android:id="@+id/ivSo"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:src="@drawable/sode" />
+
+        <ImageView
+            android:id="@+id/ivBts"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:src="@drawable/bts"/>
+    </TableRow>
+</TableLayout>
