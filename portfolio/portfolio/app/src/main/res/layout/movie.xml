@@ -28,4 +28,11 @@
         android:gravity="center"
         android:numColumns="8">
     </GridView>
+    <Button
+        android:layout_gravity="right"
+        android:id="@+id/btnSeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예매하기"
+        />
 </LinearLayout>
