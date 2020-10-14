@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="1번 진행룰 : "/>
+    <SeekBar
+        android:id="@+id/pb1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="2번 진행룰 : "/>
+    <SeekBar
+        android:id="@+id/pb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="스레드 시작"/>
+</LinearLayout>

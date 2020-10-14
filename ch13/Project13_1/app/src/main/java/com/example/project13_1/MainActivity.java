@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ListView listViewMP3;
-    Button btnPlay,btnStop;
+    Button btnPlay,btnStop,btnStop2;
     TextView tvMP3;
     ProgressBar pbMP3;
 
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnPlay = (Button)findViewById(R.id.btnplay);
         btnStop = (Button)findViewById(R.id.btnstop);
+        btnStop2 = (Button)findViewById(R.id.btnstop2);
         tvMP3 = (TextView) findViewById(R.id.tvMP3);
         pbMP3 = (ProgressBar) findViewById(R.id.pbMP3);
 
