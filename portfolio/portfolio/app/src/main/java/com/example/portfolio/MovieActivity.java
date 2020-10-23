@@ -20,8 +20,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.portfolio.NetWork.SeatInsert;
+
 public class MovieActivity extends AppCompatActivity {
-    TextView tv1,time1;
+    TextView tv1,time1,id;
     ImageView iv1;
     Intent intent;
     Button btnSeat;
@@ -44,6 +46,7 @@ public class MovieActivity extends AppCompatActivity {
         time1 = (TextView)findViewById(R.id.time1);
         iv1 =(ImageView)findViewById(R.id.iv1);
         btnSeat = (Button)findViewById(R.id.btnSeat);
+        id = (TextView)findViewById(R.id.id);
         //인텐트 받는 함수
         intent = getIntent();
         //변수에 인텐트로 받은 값들 지정
@@ -51,6 +54,8 @@ public class MovieActivity extends AppCompatActivity {
         iv1.setImageResource(intent.getIntExtra("ImageDR",0));
         time1.setText(intent.getStringExtra("Time"));
 
+        id.setText(intent.getStringExtra("id"));
+        final String user = id.getText().toString();
         //그리드뷰 위젯 연결
         GridView gv = (GridView)findViewById(R.id.gridView1);
         //그리드뷰 생성(public class MyGridAdapter extends BaseAdapter)
@@ -65,6 +70,8 @@ public class MovieActivity extends AppCompatActivity {
                 View dialogView = (View) View.inflate(MovieActivity.this,R.layout.dialog,null);
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MovieActivity.this);
+                String time = time1.getText().toString();
+                String name = tv1.getText().toString();
 
                 //좌석 배열 구분 을 위한 for 문 사용
                 //String형의 공백 변수 생성 ("-"아닌 값을 받을)
@@ -72,11 +79,12 @@ public class MovieActivity extends AppCompatActivity {
                 for(int i=0; i<seatNumArr.length; i++){
                     if(!seatNumArr[i].equals("-")){
                         //배열값이 "-"이 아니면 strSeatNumArr에 배열값 넣음
+                        new SeatInsert().execute(name,time,seatNumArr[i]);
                         strSeatNumArr = strSeatNumArr+ " "+ seatNumArr[i];
                     }
                 }
 
-                dlg.setTitle(strSeatNumArr+"열 예매 하시겠습니까?");
+                dlg.setTitle(user+"님" +strSeatNumArr+"열 예매 하시겠습니까?");
                 dlg.setView(dialogView);
 
                 final String finalStrSeatNumArr = strSeatNumArr;
@@ -90,7 +98,7 @@ public class MovieActivity extends AppCompatActivity {
                         TextView tvlast2 = (TextView)dView.findViewById(R.id.tvlast2);
 
                         tvlast1.setText(intent.getStringExtra("Time"));
-                        tvlast2.setText(finalStrSeatNumArr +"열 좌석 예약 완료 되었습니다");
+                        tvlast2.setText(user+"님"+ finalStrSeatNumArr +"열 좌석 예약 완료 되었습니다");
 
                         ImageView ivlast = (ImageView)dView.findViewById(R.id.ivlast);
                         ivlast.setImageResource(intent.getIntExtra("ImageDR",0));

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/ivlast"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/tenet"/>
+    <TextView
+        android:id="@+id/tvlast1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시간"/>
+
+    <TextView
+        android:id="@+id/tvlast2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A열 4번 좌석 예약 완료 되었습니다"/>
+
+</LinearLayout>
